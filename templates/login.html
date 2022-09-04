@@ -1,0 +1,19 @@
+{% extends "home.html" %}
+{% block container  %}
+<h3> Sign In</h3>
+<div class="collapse navbar-collapse" id="container">
+    {{ super() }}
+    <form action="{{ url_for('login')}}" class="navbar-form navbar-right" method="POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.email(class="form-control", placeholder="Email") }}
+        </div>
+        <div class="form-group">
+            {{ form.password(class="form-control", placeholder="Password") }}
+        </div>
+        <div class="form-group">
+            <button class="btn btn-default" type="submit">Sign In</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
